@@ -1,5 +1,11 @@
 import Map, { Marker, NavigationControl, GeolocateControl, Popup } from 'react-map-gl';
-import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
+import mapboxgl from 'mapbox-gl';
+
+// The following is required to stop "npm build" from transpiling mapbox code.
+// notice the exclamation point in the import.
+// @ts-ignore
+// eslint-disable-next-line import/no-webpack-loader-syntax, import/no-unresolved
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 import { useSelector } from 'react-redux';
 import { useState, useRef, useEffect } from 'react';
 import useSupercluster from 'use-supercluster';
