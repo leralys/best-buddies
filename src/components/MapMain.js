@@ -1,6 +1,5 @@
 import Map, { Marker, NavigationControl, GeolocateControl, Popup } from 'react-map-gl';
-import mapboxgl from 'mapbox-gl';
-mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
+import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import { useSelector } from 'react-redux';
 import { useState, useRef, useEffect } from 'react';
 import useSupercluster from 'use-supercluster';
