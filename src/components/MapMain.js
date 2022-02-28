@@ -1,4 +1,6 @@
 import Map, { Marker, NavigationControl, GeolocateControl, Popup } from 'react-map-gl';
+import mapboxgl from 'mapbox-gl';
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 import { useSelector } from 'react-redux';
 import { useState, useRef, useEffect } from 'react';
 import useSupercluster from 'use-supercluster';
@@ -33,8 +35,6 @@ const MapMain = () => {
         }
     }, []);
     if (locations) {
-        // for supercluster library to work
-        // we must produce an array of GeoJSON Feature objects, with the geometry of each object being a GeoJSON Point
         points = locations.map(adr => ({
             type: 'Feature',
             properties: {
@@ -50,15 +50,12 @@ const MapMain = () => {
             }
         }));
     }
-    // for supercluster to return the clusters based on the array of points, we need to provide it with the map bounds
-    // and the map zoom
     const { clusters, supercluster } = useSupercluster({
         points,
         bounds,
         zoom: viewState.zoom,
         options: { radius: 50, maxZoom: 20 }
     });
-    // finds an object in the arr of location objects by location_id
     const findById = (id, arr) => {
         return arr.find(obj => obj.location_id === id)
     }
@@ -69,7 +66,7 @@ const MapMain = () => {
                 {...viewState}
                 onMove={evt => setViewState(evt.viewState)}
                 mapStyle='mapbox://styles/mapbox/streets-v9'
-                mapboxAccessToken='pk.eyJ1IjoibGVyYWx5cyIsImEiOiJja3p0MDd0NDQ0Z3JkMm5ueWxkaXk0MGR1In0.Guoe9yUoYrVYYLrJQ5aIDw'
+                mapboxAccessToken={process.env.REACT_APP_MAPBOX}
                 minZoom={2}
                 maxZoom={20}
                 ref={mapRef}
