@@ -1,10 +1,16 @@
-import Map, { Marker, NavigationControl, GeolocateControl, Popup } from 'react-map-gl';
+import ReactMapGL, { Marker, NavigationControl, GeolocateControl, Popup } from 'react-map-gl';
 import { useSelector } from 'react-redux';
 import { useState, useRef, useEffect } from 'react';
 import useSupercluster from 'use-supercluster';
 import { Link } from 'react-router-dom';
 import PetsIcon from '@mui/icons-material/Pets';
 import './MapMain.css';
+
+import mapboxgl from "mapbox-gl"; // This is a dependency of react-map-gl even if you didn't explicitly install it
+
+//TO PREVENT BUG IN MAP API
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 
 const MapMain = () => {
@@ -31,7 +37,7 @@ const MapMain = () => {
             });
             window.scrollTo(500, 500);
         }
-    });
+    }, []);
     if (locations) {
         points = locations.map(adr => ({
             type: 'Feature',
@@ -59,7 +65,7 @@ const MapMain = () => {
     }
     return (
         <div className='Map-container'>
-            <Map
+            <ReactMapGL
                 reuseMaps
                 {...viewState}
                 onMove={evt => setViewState(evt.viewState)}
@@ -143,7 +149,7 @@ const MapMain = () => {
                         }
                     })
                 }
-            </Map>
+            </ReactMapGL>
         </div>
     )
 }
