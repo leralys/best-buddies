@@ -66,7 +66,7 @@ const MapMain = () => {
                 {...viewState}
                 onMove={evt => setViewState(evt.viewState)}
                 mapStyle='mapbox://styles/mapbox/streets-v9'
-                mapboxAccessToken={process.env.REACT_APP_MAPBOX}
+                mapboxAccessToken='pk.eyJ1IjoibGVyYWx5cyIsImEiOiJja3p0MDd0NDQ0Z3JkMm5ueWxkaXk0MGR1In0.Guoe9yUoYrVYYLrJQ5aIDw'
                 minZoom={2}
                 maxZoom={20}
                 ref={mapRef}
