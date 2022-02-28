@@ -1,0 +1,7 @@
+.thumbs.animated {
+  display: flex;
+  justify-content: center;
+}
+.carousel-root {
+  width: 60vw;
+}
