@@ -7,8 +7,8 @@ import thunk from 'redux-thunk';
 import './index.css';
 import App from './App';
 import ScrollToTop from './components/ScrollToTop';
-
 import rootReducer from './redux/reducers/rootReducer';
+
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(

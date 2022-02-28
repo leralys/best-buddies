@@ -4,8 +4,6 @@ import { useEffect } from 'react';
 import actions from './redux/actions/index';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-// import Home from './pages/Home';
-// import ParkPage from './pages/ParkPage';
 import UserPage from './pages/UserPage';
 import Form from './pages/LoginRegister';
 import NotFound from './pages/NotFound';

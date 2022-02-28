@@ -5,6 +5,8 @@ import useSupercluster from 'use-supercluster';
 import { Link } from 'react-router-dom';
 import PetsIcon from '@mui/icons-material/Pets';
 import './MapMain.css';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
 
 const MapMain = () => {
