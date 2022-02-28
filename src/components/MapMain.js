@@ -5,6 +5,7 @@ import useSupercluster from 'use-supercluster';
 import { Link } from 'react-router-dom';
 import PetsIcon from '@mui/icons-material/Pets';
 import './MapMain.css';
+import mapboxgl from '!mapbox-gl'
 // eslint-disable-next-line import/no-webpack-loader-syntax
 mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default;
 
@@ -33,7 +34,7 @@ const MapMain = () => {
             });
             window.scrollTo(500, 500);
         }
-    }, []);
+    });
     if (locations) {
         points = locations.map(adr => ({
             type: 'Feature',
@@ -66,7 +67,7 @@ const MapMain = () => {
                 {...viewState}
                 onMove={evt => setViewState(evt.viewState)}
                 mapStyle='mapbox://styles/mapbox/streets-v9'
-                mapboxAccessToken='pk.eyJ1IjoibGVyYWx5cyIsImEiOiJja3p0MDd0NDQ0Z3JkMm5ueWxkaXk0MGR1In0.Guoe9yUoYrVYYLrJQ5aIDw'
+                mapboxAccessToken={process.env.REACT_APP_MAPBOX}
                 minZoom={2}
                 maxZoom={20}
                 ref={mapRef}
