@@ -1,6 +1,6 @@
 import Nav from '../components/Nav';
 import ContentWrapper from '../components/ContentWrapper';
-import notFound from '../assets/404.jpeg';
+import notFound from '../assets/images/404.jpeg';
 
 const NotFound = () => {
     return (
