@@ -1,8 +1,8 @@
-import Nav from '../components/Nav';
-import MapMain from '../components/MapMain';
-import Search from '../components/Search';
-import Hero from '../components/Hero';
-import ContentWrapper from '../components/ContentWrapper';
+import Nav from '../../components/nav/Nav';
+import MapMain from '../../components/mapMain/MapMain';
+import Search from '../../components/search/Search';
+import Hero from '../../components/hero/Hero';
+import ContentWrapper from '../../components/contentWrapper/ContentWrapper';
 
 const Home = () => {
     return (

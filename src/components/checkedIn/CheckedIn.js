@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Typography } from '@mui/material';
-import '../pages/ParkPageStyles.css';
-import './CheckedIn.css';
-import extractTime from '../utilities/extractTime';
+import extractTime from '../../utilities/extractTime';
 import CheckedInModal from './CheckedInModal';
+import './CheckedIn.css';
 
 
 const CheckedIn = () => {

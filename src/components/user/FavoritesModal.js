@@ -4,12 +4,12 @@ import {
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
-import actions from '../redux/actions/index';
+import actions from '../../redux/actions/index';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { url } from '../utilities/url';
-import findId from '../utilities/findId';
+import { url } from '../../utilities/url';
+import findId from '../../utilities/findId';
 
 const style = {
     position: 'absolute',
@@ -25,7 +25,7 @@ const style = {
     overflow: 'scroll'
 };
 
-const ChechedInModal = (props) => {
+const FavoritesModal = (props) => {
     const dispatch = useDispatch();
     const favorites = useSelector(state => state.favorites.favorites);
     const locations = useSelector(state => state.locations.locations);
@@ -100,4 +100,4 @@ const ChechedInModal = (props) => {
     );
 }
 
-export default ChechedInModal;
+export default FavoritesModal;

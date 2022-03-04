@@ -1,10 +1,10 @@
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
-import actions from '../redux/actions/index';
+import actions from '../../redux/actions/index';
 import { Box, Button, Modal, Avatar, IconButton } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { useState } from 'react';
-import { url } from '../utilities/url';
+import { url } from '../../utilities/url';
 import { toast } from 'react-toastify';
 
 
@@ -24,7 +24,7 @@ const style = {
     justifyContent: 'center'
 };
 
-const UserPersonalModal = (props) => {
+const AvatarsModal = (props) => {
     const dispatch = useDispatch();
     const username = useSelector(state => state.loggedIn.username);
     const isLoggedIn = useSelector(state => state.loggedIn.loggedIn);
@@ -92,4 +92,4 @@ const UserPersonalModal = (props) => {
     );
 }
 
-export default UserPersonalModal;
+export default AvatarsModal;

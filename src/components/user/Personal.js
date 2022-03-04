@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
-import actions from '../redux/actions/index';
+import actions from '../../redux/actions/index';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { IconButton, Box, Button } from '@mui/material';
 import { toast } from 'react-toastify';
-import { url } from '../utilities/url';
-import UserPersonalModal from './UserPersonalModal.js';
+import { url } from '../../utilities/url';
+import AvatarsModal from './AvatarsModal.js';
 
-const UserPersonal = () => {
+const Personal = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(state => state.loggedIn.loggedIn);
@@ -75,7 +75,7 @@ const UserPersonal = () => {
                     alt='Cute dog avatar'
                 />
             }
-            <UserPersonalModal />
+            <AvatarsModal />
             <Box sx={{ display: 'inline-flex' }} >
                 <Button
                     onClick={logout}
@@ -106,4 +106,4 @@ const UserPersonal = () => {
     );
 }
 
-export default UserPersonal;
+export default Personal;

@@ -1,7 +1,7 @@
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import randomNum from '../utilities/randomNum';
-import { url } from '../utilities/url';
+import randomNum from '../../utilities/randomNum';
+import { url } from '../../utilities/url';
 
 
 

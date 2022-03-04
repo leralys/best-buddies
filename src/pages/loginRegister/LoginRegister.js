@@ -14,9 +14,9 @@ import {
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { toast } from 'react-toastify';
-import Nav from '../components/Nav';
-import ContentWrapper from '../components/ContentWrapper';
-import { url } from '../utilities/url';
+import Nav from '../../components/nav/Nav';
+import ContentWrapper from '../../components/contentWrapper/ContentWrapper';
+import { url } from '../../utilities/url';
 import './LoginRegister.css';
 
 const Form = ({ title }) => {

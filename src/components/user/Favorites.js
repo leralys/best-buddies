@@ -1,16 +1,16 @@
 import { useSelector, useDispatch } from 'react-redux';
-import actions from '../redux/actions/index';
+import actions from '../../redux/actions/index';
 import axios from 'axios';
-import { url } from '../utilities/url';
-import findId from '../utilities/findId';
+import { url } from '../../utilities/url';
+import findId from '../../utilities/findId';
 import { Button, Typography, IconButton } from '@mui/material';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { Link } from 'react-router-dom';
-import UserFavoritesModal from './UserFavoritesModal';
+import FavoritesModal from './FavoritesModal';
 import { toast } from 'react-toastify';
-import './UserFavorites.css';
+import './Favorites.css';
 
-const UserFavorites = () => {
+const Favorites = () => {
     const dispatch = useDispatch();
     const favorites = useSelector(state => state.favorites.favorites);
     const locations = useSelector(state => state.locations.locations);
@@ -83,7 +83,7 @@ const UserFavorites = () => {
                                 <Typography>
                                     ... and {favorites.length - n} more
                                 </Typography>
-                                <UserFavoritesModal n={n} />
+                                <FavoritesModal n={n} />
                             </>
                         }
                     </div>
@@ -94,4 +94,4 @@ const UserFavorites = () => {
     );
 }
 
-export default UserFavorites;
+export default Favorites;

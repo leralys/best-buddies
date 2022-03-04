@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
-import actions from '../redux/actions/index';
-import Nav from '../components/Nav';
-import UserPersonal from '../components/UserPersonal';
-import UserFavorites from '../components/UserFavorites';
+import actions from '../../redux/actions/index';
+import Nav from '../../components/nav/Nav';
+import Personal from '../../components/user/Personal';
+import Favorites from '../../components/user/Favorites';
 import { useEffect } from 'react';
 
 const UserPage = () => {
@@ -22,10 +22,10 @@ const UserPage = () => {
                 }
                 <div className='row User-info'>
                     {isLoggedIn &&
-                        <UserPersonal />
+                        <Personal />
                     }
                     {favorites && isLoggedIn &&
-                        <UserFavorites />
+                        <Favorites />
                     }
                 </div>
             </main>

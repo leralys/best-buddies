@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import actions from '../redux/actions/index';
-import verify from '../services/verify';
+import actions from '../../redux/actions/index';
+import verify from '../../services/verify';
 import {
     Box,
     AppBar,
@@ -11,8 +11,8 @@ import {
     Button,
     Avatar
 } from '@mui/material';
-import { url } from '../utilities/url';
-import Search from './Search';
+import { url } from '../../utilities/url';
+import Search from '../search/Search';
 import './Nav.css';
 
 const Nav = () => {

@@ -2,16 +2,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import StarIcon from '@mui/icons-material/Star';
 import { Button } from '@mui/material';
-import '../pages/ParkPageStyles.css';
 import ParkAddToFavorites from './ParkAddToFavorites';
-import MapMini from './MapMini';
+import MapMini from '../mapMini/MapMini';
 import axios from 'axios';
-import actions from '../redux/actions/index';
-import { url } from '../utilities/url';
+import actions from '../../redux/actions/index';
+import { url } from '../../utilities/url';
 import { toast } from 'react-toastify';
 
 
-const ParkDetailes = () => {
+const ParkMain = () => {
     const dispatch = useDispatch();
     const park = useSelector(state => state.park.park[0]);
     const isLoggedIn = useSelector(state => state.loggedIn.loggedIn);
@@ -74,4 +73,4 @@ const ParkDetailes = () => {
     );
 }
 
-export default ParkDetailes;
+export default ParkMain;

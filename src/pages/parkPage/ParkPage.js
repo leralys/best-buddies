@@ -2,13 +2,13 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { Typography, CircularProgress } from '@mui/material';
-import actions from '../redux/actions/index';
-import Nav from '../components/Nav';
-import ParkDetailes from '../components/ParkDetailes';
-import ParkCarousel from '../components/ParkCarousel';
-import ParkAbout from '../components/ParkAbout';
-import CheckedIn from '../components/CheckedIn';
-import Invitation from '../components/Invitation';
+import actions from '../../redux/actions/index';
+import Nav from '../../components/nav/Nav';
+import ParkMain from '../../components/park/ParkMain';
+import ParkCarousel from '../../components/park/ParkCarousel';
+import ParkAbout from '../../components/park/ParkAbout';
+import CheckedIn from '../../components/checkedIn/CheckedIn';
+import Invitation from '../../components/invitation/Invitation';
 import './ParkPageStyles.css';
 
 const ParkPage = () => {
@@ -31,7 +31,7 @@ const ParkPage = () => {
                 <section className='row page-section'>
                     <div className='col'>
                         {park
-                            ? <ParkDetailes />
+                            ? <ParkMain />
                             : <CircularProgress color="secondary" />
                         }
                     </div>

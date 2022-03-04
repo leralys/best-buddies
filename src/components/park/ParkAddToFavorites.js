@@ -1,13 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import actions from '../redux/actions/index';
+import actions from '../../redux/actions/index';
 import axios from 'axios';
-import { url } from '../utilities/url';
+import { url } from '../../utilities/url';
 import { toast } from 'react-toastify';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { IconButton, Box, Button } from '@mui/material';
-import findId from '../utilities/findId';
+import findId from '../../utilities/findId';
 
 
 const ParkAddToFavorites = () => {

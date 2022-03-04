@@ -1,7 +1,7 @@
 import { Box, Button, Modal } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import extractTime from '../utilities/extractTime';
+import extractTime from '../../utilities/extractTime';
 
 const style = {
     position: 'absolute',

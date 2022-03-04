@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Button } from '@mui/material';
-import { url } from '../utilities/url';
+import { url } from '../../utilities/url';
 import './MapMini.css';
 
 const MapMini = () => {
