@@ -21,11 +21,15 @@ const Nav = () => {
                 dispatch(actions.isLoggedIn({ status: false, username: '', avatar: '' }));
             });
     }, [dispatch]);
+    const handleClick = () => {
+        window.scrollTo(0, 0);
+        dispatch(actions.clearCurrPark());
+    }
     return (
         <AppBar className='navbar-container'>
             <Toolbar className='navbar'>
                 <Link className='navbar-link' to={`/`}
-                    onMouseDown={() => dispatch(actions.clearCurrPark())}
+                    onMouseDown={handleClick}
                     className='logo'>
                     Best Buddies
                 </Link>

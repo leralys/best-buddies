@@ -5,7 +5,8 @@ import useSupercluster from 'use-supercluster';
 import { Link } from 'react-router-dom';
 import PetsIcon from '@mui/icons-material/Pets';
 import Search from '../search/Search';
-import './MapMain.css';
+// import './MapMain.css';
+import './mapMain.scss';
 
 import mapboxgl from "mapbox-gl"; // This is a dependency of react-map-gl even if you didn't explicitly install it
 
@@ -29,6 +30,7 @@ const MapMain = () => {
         ? mapRef.current.getMap().getBounds().toArray().flat()
         : null;
     useEffect(() => {
+        window.scrollTo(0, 0);
         if (park) {
             setViewState({
                 ...viewState,
@@ -36,10 +38,13 @@ const MapMain = () => {
                 longitude: park.lng,
                 zoom: 17
             });
-            window.scrollTo(500, 500);
+            window.scrollTo(0, 750);
+
         }
     }, []);
     if (locations) {
+        // for supercluster library to work
+        // we must produce an array of GeoJSON Feature objects, with the geometry of each object being a GeoJSON Point
         points = locations.map(adr => ({
             type: 'Feature',
             properties: {
@@ -55,6 +60,8 @@ const MapMain = () => {
             }
         }));
     }
+    // for supercluster to return the clusters based on the array of points, we need to provide it with the map bounds
+    // and the map zoom
     const { clusters, supercluster } = useSupercluster({
         points,
         bounds,
@@ -65,9 +72,8 @@ const MapMain = () => {
         return arr.find(obj => obj.location_id === id)
     }
     return (
-        <div style={{ marginTop: '65px' }}>
-            <Search id='Home-search' />
-            <div className='Map-container' id='map'>
+        <div className='mapMain'>
+            <div className='map-container' id='map'>
                 <ReactMapGL
                     reuseMaps
                     {...viewState}

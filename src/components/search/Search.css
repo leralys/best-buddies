@@ -30,9 +30,3 @@
 .Search-dropdown li:hover {
   background: var(--color-light-grey);
 }
-
-#Home-search {
-  margin: 0 auto;
-  width: 50vw;
-  margin-bottom: 1rem;
-}

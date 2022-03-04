@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
-    FormControl, OutlinedInput, InputAdornment
+    FormControl, OutlinedInput, InputAdornment, IconButton
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import './Search.css';
@@ -30,6 +30,11 @@ const Search = (props) => {
         setSearchText(e.target.value);
         close();
     }
+    // const handleMouseDown = (id) => {
+    //     if (id === 'main-search') {
+    //         window.scrollTo(0, 600);
+    //     }
+    // }
     let filtered;
     if (locations) {
         filtered = locations.filter(adr => {
@@ -40,23 +45,29 @@ const Search = (props) => {
         <FormControl variant='outlined' id={props.id} className='Search-container'>
             <OutlinedInput
                 type='text'
+                // onMouseDown={() => handleMouseDown(props.id)}
                 onChange={handleChange}
                 onBlur={clickOutside}
                 placeholder='Search city'
                 size='small'
                 endAdornment={
+                    // <InputAdornment position='end'>
+                    //     {props.id === 'main-search'
+                    //         ? <IconButton>
+                    //             <SearchIcon />
+                    //             </IconButton>
+                    //         : <SearchIcon />}
+                    // </InputAdornment>}
                     <InputAdornment position='end'>
                         <SearchIcon />
-                    </InputAdornment>
-                }
+                    </InputAdornment>}
             />
             {filtered && expanded ?
-                <ul className='Search-dropdown'>
+                <ul className='Search-dropdown' id={props.id + '-dropdown'}>
                     {filtered.map(el => {
                         return (
                             <li key={el.location_id}
-                                onMouseDown={() => navigate(`/locations/${el.location_id}`)}
-                            >
+                                onMouseDown={() => navigate(`/locations/${el.location_id}`)}>
                                 {el.address}, {el.city}
                             </li>
                         )
