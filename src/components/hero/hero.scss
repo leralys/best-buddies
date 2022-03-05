@@ -82,7 +82,7 @@
         margin-top: 40px;
         background: $blueVioletColor;
 
-        @include mobile {
+        @include tablet {
           margin-top: 80px;
           margin-right: 10px;
           align-self: flex-end;
@@ -119,6 +119,10 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
+
+    @include tablet {
+      transform: translateY(-80px);
+    }
 
     div {
       display: flex;
