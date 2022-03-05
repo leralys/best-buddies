@@ -12,11 +12,9 @@ const Hero = () => {
             <div className='container'>
                 <div className="left">
                     <div className="text-container">
-                        <h2>Looking for a friend for your friend?</h2>
-                        <h2>Want to make sure that your buddy won't be alone in the park?</h2>
-                        <h1>Best Buddies</h1>
-                        <h3>Revolutionary app that will change your life.</h3>
+                        <h1>Revolutionary app that will change your life.</h1>
                         <h4>*at least we hope so</h4>
+                        <h2>Make sure that your buddy won't be alone in a park, make check-ins, and meet new friends.</h2>
                     </div>
                     <Button variant='contained' size='large'
                         className='button-main'
@@ -30,12 +28,13 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            {/* <div className='bottom-container'>
-                <Search id='main-search' />
+            <div className='bottom-container'>
+                {/* <Search id='main-search' /> */}
                 <a href='#map'>
                     <img src={scroll} alt="" className="scroll-img" />
                 </a>
-            </div> */}
+                Scroll Down
+            </div>
         </div>
     );
 }
