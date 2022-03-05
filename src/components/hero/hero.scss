@@ -105,13 +105,16 @@
   }
   .bottom-container {
     height: 20%;
-    width: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    // justify-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
 
     a {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       img {
         width: 30px;
         animation: arrowBlink 2s infinite;
