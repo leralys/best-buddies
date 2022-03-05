@@ -3,7 +3,7 @@
 .hero {
   display: flex;
   width: 100vw;
-  // height: calc(100vh - 65px);
+  font-size: 16px;
   height: 100vh;
   top: 65px;
   left: 0;
@@ -18,11 +18,10 @@
 
   .container {
     width: 90%;
-    height: 80%;
+    height: 70%;
     display: flex;
     align-items: space-between;
     justify-content: space-between;
-    // background-color: bisque;
 
     @include tablet {
       width: 80%;
@@ -34,18 +33,25 @@
       flex-direction: column;
       align-items: flex-end;
       justify-content: center;
-      // background-color: aquamarine;
-      position: relative;
+
+      @include mobile {
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+      }
 
       .text-container {
         height: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        // background-color: darkslateblue;
 
         > * {
           margin-bottom: 15px;
+
+          @include mobile {
+            margin-bottom: 30px;
+          }
         }
 
         h1 {
@@ -71,12 +77,15 @@
           font-weight: 500;
         }
       }
+
       .button-main {
-        // margin-bottom: 40px;
-        position: absolute;
-        top: 450px;
-        margin-right: 40px;
+        margin-top: 40px;
         background: $blueVioletColor;
+
+        @include mobile {
+          margin-top: 80px;
+          align-self: flex-end;
+        }
       }
     }
 
@@ -86,7 +95,6 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-end;
-      // background-color: chocolate;
 
       @include tablet {
         display: none;

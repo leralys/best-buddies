@@ -29,14 +29,12 @@ const Hero = () => {
                 </div>
             </div>
             <div className='bottom-container'>
-                {/* <Search id='main-search' /> */}
                 <div>
                     <a href='#map'>
                         <img src={scroll} alt="" className="scroll-img" />
                     </a>
                     <div>Scroll Down</div>
                 </div>
-
             </div>
         </div>
     );
