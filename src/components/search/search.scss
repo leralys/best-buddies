@@ -1,9 +1,10 @@
-.Search-container {
+@import "../../global.scss";
+
+.search-container {
   background: #fff;
   position: relative;
 }
-
-.Search-dropdown {
+.search-dropdown {
   top: 40px;
   left: 2px;
   list-style: none;
@@ -21,12 +22,13 @@
   overflow: scroll;
   position: absolute;
   outline: none;
-}
-.Search-dropdown li {
-  margin-bottom: 0.5rem;
-  cursor: pointer;
-  padding: 5px;
-}
-.Search-dropdown li:hover {
-  background: var(--color-light-grey);
+
+  li {
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    padding: 5px;
+    &:hover {
+      background: $lightGreyColor;
+    }
+  }
 }

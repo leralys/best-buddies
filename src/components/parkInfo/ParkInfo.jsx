@@ -8,9 +8,11 @@ import axios from 'axios';
 import actions from '../../redux/actions/index';
 import { url } from '../../utilities/url';
 import { toast } from 'react-toastify';
+import './parkInfo.scss';
 
+//a component that contains mini map component, rating& hours, check-in button , add to fav component 
 
-const ParkMain = () => {
+const ParkInfo = () => {
     const dispatch = useDispatch();
     const park = useSelector(state => state.park.park[0]);
     const isLoggedIn = useSelector(state => state.loggedIn.loggedIn);
@@ -39,15 +41,15 @@ const ParkMain = () => {
         }
     }
     return (
-        <>
-            <div className='row Park-detailes' style={{ width: '60vw' }}>
-                <div className='col' style={{ marginRight: '2rem' }}>
+        <div className='park-info'>
+            <div className='info-container'>
+                <div className='map-container'>
                     <MapMini />
                 </div>
-                <div className='col additional-container' style={{ marginTop: '1rem', justifyContent: 'space-between' }}>
+                <div className='additional-container'>
                     <div className='col'>
                         Rating:
-                        <div className='row' style={{ marginTop: '0.5rem', marginBottom: '1rem' }}>
+                        <div className='row'>
                             {rate}
                         </div>
                         Open hours:
@@ -59,8 +61,7 @@ const ParkMain = () => {
                         <Button variant='contained'
                             id='checkin-button'
                             onClick={checkin}
-                            sx={{ mb: 2 }}
-                            style={{ background: 'var(--color-map-red)' }}>
+                            sx={{ mb: 2 }}>
                             Check In
                         </Button>
                     }
@@ -69,8 +70,8 @@ const ParkMain = () => {
             {isLoggedIn && favorites &&
                 <ParkAddToFavorites />
             }
-        </>
+        </div>
     );
 }
 
-export default ParkMain;
+export default ParkInfo;

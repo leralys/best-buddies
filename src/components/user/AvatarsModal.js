@@ -53,12 +53,10 @@ const AvatarsModal = (props) => {
     }
     const list = [...Array(n)].map((elem, i) => {
         return (
-            <IconButton>
+            <IconButton key={i} onClick={() => changeAvatar(i + 1)}>
                 <Avatar alt='Cute dog avatar'
-                    key={i}
                     src={`${url}/static/avatars/${i + 1}.jpeg`}
                     style={{ width: '70px', height: '70px' }}
-                    onClick={() => changeAvatar(i + 1)}
                 />
             </IconButton >
         );

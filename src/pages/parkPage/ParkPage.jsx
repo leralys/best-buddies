@@ -4,12 +4,12 @@ import { useEffect } from 'react';
 import { Typography, CircularProgress } from '@mui/material';
 import actions from '../../redux/actions/index';
 import Nav from '../../components/nav/Nav';
-import ParkMain from '../../components/park/ParkMain';
-import ParkCarousel from '../../components/park/ParkCarousel';
-import ParkAbout from '../../components/park/ParkAbout';
+import ParkInfo from '../../components/parkInfo/ParkInfo';
+// import ParkCarousel from '../../components/park/ParkCarousel';
+// import ParkAbout from '../../components/park/ParkAbout';
 import CheckedIn from '../../components/checkedIn/CheckedIn';
 import Invitation from '../../components/invitation/Invitation';
-import './ParkPageStyles.css';
+import './parkPage.scss';
 
 const ParkPage = () => {
     let id = useParams().locationId;
@@ -22,20 +22,20 @@ const ParkPage = () => {
         dispatch(actions.fetchChekins(id));
     }, [dispatch, id]);
     return (
-        <>
+        <div className='park-page'>
             <Nav />
-            <main className='page' style={{ width: '90vw', margin: '3rem auto 1rem' }}>
+            <main className='content'>
                 {park
                     ? <h2 className='page-header'>{park.address}, {park.city}</h2>
-                    : <CircularProgress color="secondary" />}
-                <section className='row page-section'>
-                    <div className='col'>
+                    : <CircularProgress color="success" />}
+                <section className='page-section'>
+                    <div className='left'>
                         {park
-                            ? <ParkMain />
-                            : <CircularProgress color="secondary" />
+                            ? <ParkInfo />
+                            : <CircularProgress color="success" />
                         }
                     </div>
-                    <div className='col CheckedIn'>
+                    <div className='right'>
                         {checkedIn.length > 0 && isLoggedIn &&
                             <CheckedIn />
                         }
@@ -49,18 +49,18 @@ const ParkPage = () => {
                         }
                     </div>
                 </section>
-                <section className='row page-section' id='Carousel' style={{ justifyContent: 'center' }}>
+                {/* <section className='row page-section' id='Carousel' style={{ justifyContent: 'center' }}>
                     {park
                         ? <ParkCarousel id='Carousel' />
-                        : <CircularProgress color="secondary" />
+                        : <CircularProgress color="success" />
                     }
                 </section>
                 {park
                     ? <ParkAbout />
                     : <CircularProgress color="secondary" />
-                }
+                } */}
             </main>
-        </>
+        </div>
     );
 }
 

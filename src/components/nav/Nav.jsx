@@ -28,9 +28,8 @@ const Nav = () => {
     return (
         <AppBar className='navbar-container'>
             <Toolbar className='navbar'>
-                <Link className='navbar-link' to={`/`}
-                    onMouseDown={handleClick}
-                    className='logo'>
+                <Link className='navbar-link logo' to={`/`}
+                    onMouseDown={handleClick}>
                     Best Buddies
                 </Link>
                 <div className='navbar-search-container'>

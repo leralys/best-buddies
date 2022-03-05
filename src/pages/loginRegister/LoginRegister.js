@@ -2,22 +2,15 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import {
-    Button,
-    Box,
-    TextField,
-    IconButton,
-    InputLabel,
-    OutlinedInput,
-    InputAdornment,
-    FormControl
+    Button, Box, TextField, IconButton, InputLabel,
+    OutlinedInput, InputAdornment, FormControl
 } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import { toast } from 'react-toastify';
 import Nav from '../../components/nav/Nav';
-import ContentWrapper from '../../components/contentWrapper/ContentWrapper';
 import { url } from '../../utilities/url';
-import './LoginRegister.css';
+import './loginRegister.scss';
 
 const Form = ({ title }) => {
     const [values, setValues] = useState({
@@ -119,16 +112,15 @@ const Form = ({ title }) => {
         }
     }
     return (
-        <>
+        <div className='loginRegister'>
             <Nav />
             <main className='page'>
-                <ContentWrapper>
-                    <h2 style={{ marginTop: '3rem' }}>{title}</h2>
+                <div className='container'>
+                    <h2>{title}</h2>
                     <Box
+                        className='form'
                         component='form'
-                        noValidate
-                        autoComplete='off'
-                        className='Form col'>
+                        autoComplete='off'>
                         {title === 'Register' &&
                             <TextField
                                 required
@@ -192,9 +184,9 @@ const Form = ({ title }) => {
                             }
                         </div>
                     </Box>
-                </ContentWrapper>
+                </div>
             </main>
-        </>
+        </div>
     );
 }
 

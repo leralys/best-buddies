@@ -5,7 +5,7 @@ import {
     FormControl, OutlinedInput, InputAdornment, IconButton
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import './Search.css';
+import './search.scss';
 
 const Search = (props) => {
     const locations = useSelector(state => state.locations.locations);
@@ -30,11 +30,12 @@ const Search = (props) => {
         setSearchText(e.target.value);
         close();
     }
-    // const handleMouseDown = (id) => {
-    //     if (id === 'main-search') {
-    //         window.scrollTo(0, 600);
-    //     }
-    // }
+    let placeholder;
+    if (window.innerWidth > 400) {
+        placeholder = 'Search city'
+    } else {
+        placeholder = 'City';
+    }
     let filtered;
     if (locations) {
         filtered = locations.filter(adr => {
@@ -42,13 +43,13 @@ const Search = (props) => {
         })
     }
     return (
-        <FormControl variant='outlined' id={props.id} className='Search-container'>
+        <FormControl variant='outlined' id={props.id} className='search-container'>
             <OutlinedInput
                 type='text'
                 // onMouseDown={() => handleMouseDown(props.id)}
                 onChange={handleChange}
                 onBlur={clickOutside}
-                placeholder='Search city'
+                placeholder={placeholder}
                 size='small'
                 endAdornment={
                     // <InputAdornment position='end'>
@@ -63,7 +64,7 @@ const Search = (props) => {
                     </InputAdornment>}
             />
             {filtered && expanded ?
-                <ul className='Search-dropdown' id={props.id + '-dropdown'}>
+                <ul className='search-dropdown' id={props.id + '-dropdown'}>
                     {filtered.map(el => {
                         return (
                             <li key={el.location_id}

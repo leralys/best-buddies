@@ -2,27 +2,26 @@ import { useSelector } from 'react-redux';
 import { Typography } from '@mui/material';
 import extractTime from '../../utilities/extractTime';
 import CheckedInModal from './CheckedInModal';
-import './CheckedIn.css';
+import './checkedIn.scss';
 
 
 const CheckedIn = () => {
     const n = 4;
     const checkedIn = useSelector(state => state.checkedIn.checkedIn);
     return (
-        <>
+        <div className='checked-in'>
             <h2 className='page-header'>Last Check in's:</h2>
             <div>
                 <ul>
                     {checkedIn.slice(0, n).map(el => {
                         return (
-                            <li key={el.createdat} className='col'
-                                style={{ listStyle: 'none' }}>
+                            <li key={el.createdat}>
                                 <div>
-                                    <div className='row' style={{ alignItems: 'center' }}>
+                                    <div>
                                         <div className='online-icon'></div>
                                         {el.username}
                                     </div>
-                                    <div className='Checkedin-lastseen'>
+                                    <div className='checkedin-lastseen'>
                                         Checked in at: {extractTime(el.createdat)}
                                     </div>
                                 </div>
@@ -40,7 +39,7 @@ const CheckedIn = () => {
                     </>
                 }
             </div>
-        </>
+        </div>
     )
 }
 

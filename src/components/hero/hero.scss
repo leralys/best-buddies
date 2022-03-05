@@ -2,7 +2,7 @@
 
 .hero {
   display: flex;
-  width: 100vw;
+  width: 100%;
   font-size: 16px;
   height: 100vh;
   top: 65px;
@@ -37,7 +37,7 @@
       @include mobile {
         justify-content: flex-start;
         align-items: center;
-        width: 100%;
+        width: 100vw;
       }
 
       .text-container {
@@ -60,7 +60,7 @@
           color: $darkGreyColor;
 
           @include fourHundred {
-            font-size: 40px;
+            font-size: 35px;
           }
         }
         h2 {
@@ -84,6 +84,7 @@
 
         @include mobile {
           margin-top: 80px;
+          margin-right: 10px;
           align-self: flex-end;
         }
       }
@@ -124,15 +125,15 @@
       flex-direction: column;
       align-items: center;
 
-      div {
-        font-size: 10px;
-      }
       a {
         img {
           width: 25px;
           animation: arrowBlink 2s infinite;
           opacity: 0.9;
         }
+      }
+      div {
+        font-size: 10px;
       }
     }
     @keyframes arrowBlink {
