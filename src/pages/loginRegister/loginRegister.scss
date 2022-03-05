@@ -12,7 +12,6 @@
       margin: 0 15px;
       display: flex;
       flex-direction: column;
-      //   flex-wrap: nowrap;
       align-items: center;
       justify-content: center;
 
@@ -22,11 +21,16 @@
       .form {
         display: flex;
         flex-direction: column;
-        border: 2px solid $mediumBlueColor;
+        border: 2px solid $blueVioletColor;
         align-items: center;
         padding: 15px 15px 8px;
         margin-top: 15px;
         border-radius: 8px;
+
+        .form-button {
+          width: fit-content;
+          background: $blueVioletColor;
+        }
       }
     }
   }

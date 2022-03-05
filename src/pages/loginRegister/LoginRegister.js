@@ -164,10 +164,9 @@ const Form = ({ title }) => {
                                 label='Password'
                             />
                         </FormControl>
-                        <Button
+                        <Button className='form-button'
                             onClick={() => handleAction(title)}
-                            variant='contained' sx={{ m: 1 }}
-                            style={{ width: 'fit-content' }}>
+                            variant='contained' sx={{ m: 1 }}>
                             {title === 'Register'
                                 ? <>Register</>
                                 : <>Sign In</>
