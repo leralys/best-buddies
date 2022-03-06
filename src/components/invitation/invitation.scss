@@ -1,0 +1,24 @@
+@import "../../global.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-evenly;
+
+  @include seventwenty {
+    position: absolute;
+    top: 500px;
+    left: 20px;
+    margin-right: 25px;
+  }
+
+  .h5 {
+    font-size: 28px;
+  }
+
+  .button {
+    width: fit-content;
+    background: $redColor;
+  }
+}

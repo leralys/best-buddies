@@ -1,0 +1,17 @@
+@import "../../global.scss";
+
+.addtofav-container {
+  @include seventwenty {
+    position: absolute;
+    top: 560px;
+    left: 0;
+  }
+
+  .red {
+    color: $redColor;
+  }
+
+  #addtofav-button {
+    color: $darkGreyColor;
+  }
+}

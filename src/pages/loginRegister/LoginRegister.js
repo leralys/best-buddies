@@ -112,7 +112,7 @@ const Form = ({ title }) => {
         }
     }
     return (
-        <div className='loginRegister'>
+        <div className='login-register'>
             <Nav />
             <main className='page'>
                 <div className='container'>

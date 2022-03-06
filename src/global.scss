@@ -1,5 +1,8 @@
 $tablet: 768px;
 $mobile: 320px;
+$ninefifty: 950px;
+$seventwenty: 720px;
+$fiveHundred: 500px;
 $fourHundred: 400px;
 
 $darkGreyColor: #252525;
@@ -22,6 +25,24 @@ $redColor: #c64142;
 
 @mixin mobile {
   @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin ninefifty {
+  @media (max-width: #{$ninefifty}) {
+    @content;
+  }
+}
+
+@mixin seventwenty {
+  @media (max-width: #{$seventwenty}) {
+    @content;
+  }
+}
+
+@mixin fiveHundred {
+  @media (max-width: #{$fiveHundred}) {
     @content;
   }
 }

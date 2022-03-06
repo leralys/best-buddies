@@ -4,8 +4,6 @@ import { useState, useRef, useEffect } from 'react';
 import useSupercluster from 'use-supercluster';
 import { Link } from 'react-router-dom';
 import PetsIcon from '@mui/icons-material/Pets';
-import Search from '../search/Search';
-// import './MapMain.css';
 import './mapMain.scss';
 
 import mapboxgl from "mapbox-gl"; // This is a dependency of react-map-gl even if you didn't explicitly install it
@@ -72,7 +70,7 @@ const MapMain = () => {
         return arr.find(obj => obj.location_id === id)
     }
     return (
-        <div className='mapMain'>
+        <div className='map-main'>
             <div className='map-container' id='map'>
                 <ReactMapGL
                     reuseMaps

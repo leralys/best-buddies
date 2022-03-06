@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import StarIcon from '@mui/icons-material/Star';
 import { Button } from '@mui/material';
-import ParkAddToFavorites from './ParkAddToFavorites';
+import AddToFavorites from '../parkAddToFav/AddToFavorites';
 import MapMini from '../mapMini/MapMini';
 import axios from 'axios';
 import actions from '../../redux/actions/index';
@@ -68,7 +68,7 @@ const ParkInfo = () => {
                 </div>
             </div>
             {isLoggedIn && favorites &&
-                <ParkAddToFavorites />
+                <AddToFavorites />
             }
         </div>
     );

@@ -5,7 +5,6 @@ import { Typography, CircularProgress } from '@mui/material';
 import actions from '../../redux/actions/index';
 import Nav from '../../components/nav/Nav';
 import ParkInfo from '../../components/parkInfo/ParkInfo';
-// import ParkCarousel from '../../components/park/ParkCarousel';
 // import ParkAbout from '../../components/park/ParkAbout';
 import CheckedIn from '../../components/checkedIn/CheckedIn';
 import Invitation from '../../components/invitation/Invitation';
@@ -40,7 +39,7 @@ const ParkPage = () => {
                             <CheckedIn />
                         }
                         {isLoggedIn && checkedIn.length === 0 &&
-                            <Typography variant='h6' className='page-header'>
+                            <Typography variant='h5'>
                                 Nobody was here for the last hour, be first!
                             </Typography>
                         }
@@ -49,13 +48,7 @@ const ParkPage = () => {
                         }
                     </div>
                 </section>
-                {/* <section className='row page-section' id='Carousel' style={{ justifyContent: 'center' }}>
-                    {park
-                        ? <ParkCarousel id='Carousel' />
-                        : <CircularProgress color="success" />
-                    }
-                </section>
-                {park
+                {/*{park
                     ? <ParkAbout />
                     : <CircularProgress color="secondary" />
                 } */}
