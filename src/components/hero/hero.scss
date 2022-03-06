@@ -23,9 +23,9 @@
     align-items: space-between;
     justify-content: space-between;
 
-    // @include tablet {
-    //   width: 80%;
-    // }
+    @include tablet {
+      width: 80%;
+    }
 
     .left {
       flex: 5;

@@ -36,8 +36,7 @@ const MapMain = () => {
                 longitude: park.lng,
                 zoom: 17
             });
-            window.scrollTo(0, 750);
-
+            window.scrollTo(0, 50);
         }
     }, []);
     if (locations) {

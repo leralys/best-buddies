@@ -30,6 +30,7 @@ const ParkPage = () => {
                 <section className='page-section'>
                     <div className='left'>
                         {park
+                            // ? <h1>HEllo</h1>
                             ? <ParkInfo />
                             : <CircularProgress color="success" />
                         }

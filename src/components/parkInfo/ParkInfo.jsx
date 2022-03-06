@@ -19,7 +19,7 @@ const ParkInfo = () => {
     const username = useSelector(state => state.loggedIn.username);
     const favorites = useSelector(state => state.favorites.favorites);
     const rate = [...Array(park.rate)].map((elem, i) => {
-        return <StarIcon key={i} style={{ color: 'var(--color-yelow)' }} />
+        return <StarIcon key={i} style={{ color: '#faaf00' }} />
     });
     useEffect(() => {
         dispatch(actions.fetchFavorites(username));
