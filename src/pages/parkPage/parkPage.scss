@@ -49,11 +49,8 @@
         flex: 4;
 
         @include seventwenty {
-          margin-top: 220px;
+          margin-top: 35px;
           margin-left: 20px;
-        }
-        @include fourHundred {
-          margin-top: 280px;
         }
       }
     }

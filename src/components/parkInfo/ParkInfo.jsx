@@ -45,6 +45,9 @@ const ParkInfo = () => {
             <div className='info-container'>
                 <div className='map-container'>
                     <MapMini />
+                    {isLoggedIn && favorites &&
+                        <AddToFavorites />
+                    }
                 </div>
                 <div className='additional-container'>
                     <div className='col'>
@@ -67,9 +70,6 @@ const ParkInfo = () => {
                     }
                 </div>
             </div>
-            {isLoggedIn && favorites &&
-                <AddToFavorites />
-            }
         </div>
     );
 }

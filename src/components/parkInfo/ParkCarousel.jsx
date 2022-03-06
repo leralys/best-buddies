@@ -9,17 +9,17 @@ const ParkCarousel = () => {
     return (
         <Carousel autoPlay infiniteLoop>
             <div>
-                <img className='Carousel-image'
+                <img
                     src={`${url}/static/parks/${randomNum()}.jpeg`}
                     alt='Dogs playing in a dog park' />
             </div>
             <div>
-                <img className='Carousel-image'
+                <img
                     src={`${url}/static/parks/${randomNum()}.jpeg`}
                     alt='Dogs playing in a dog park' />
             </div>
             <div>
-                <img className='Carousel-image'
+                <img
                     src={`${url}/static/parks/${randomNum()}.jpeg`}
                     alt='Dogs playing in a dog park' />
             </div>

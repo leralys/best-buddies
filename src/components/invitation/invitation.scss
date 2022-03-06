@@ -6,12 +6,11 @@
   height: 300px;
   justify-content: space-evenly;
 
-  // @include seventwenty {
-  //   position: absolute;
-  //   top: 500px;
-  //   left: 20px;
-  //   margin-right: 20px;
-  // }
+  @include fiveHundred {
+    width: 100%;
+    align-self: center;
+    margin-right: 20px;
+  }
 
   .h5 {
     font-size: 28px;

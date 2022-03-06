@@ -1,7 +1,8 @@
 @import "../../global.scss";
 
 .park-info {
-  // position: relative;
+  position: relative;
+
   .info-container {
     display: flex;
 
@@ -14,7 +15,6 @@
       display: flex;
       flex-direction: column;
       margin-right: 30px;
-      // position: relative;
     }
     .additional-container {
       display: flex;
@@ -22,23 +22,10 @@
       justify-content: space-between;
       margin-top: 15px;
 
-      // @include ninefifty {
-      //   position: absolute;
-      //   top: 430px;
-      //   left: 20px;
-      // }
-
-      // @include seventwenty {
-      //   position: static;
-      //   align-items: flex-start;
-      //   margin-left: 20px;
-      // }
-
-      // @include fourHundred {
-      //   position: absolute;
-      //   top: 360px;
-      //   left: 20px;
-      // }
+      @include ninefifty {
+        width: 100%;
+        margin-left: 20px;
+      }
 
       .col {
         display: flex;
@@ -55,6 +42,7 @@
 
         @include ninefifty {
           margin-top: 20px;
+          width: fit-content;
         }
       }
     }
