@@ -27,7 +27,7 @@
 
       @include fiveHundred {
         font-size: 20px;
-        margin-left: 15px;
+        margin-left: 8px;
       }
     }
     .page-section {
@@ -49,8 +49,11 @@
         flex: 4;
 
         @include seventwenty {
-          margin-top: 100px;
+          margin-top: 220px;
           margin-left: 20px;
+        }
+        @include fourHundred {
+          margin-top: 280px;
         }
       }
     }
