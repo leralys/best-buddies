@@ -24,17 +24,12 @@ const Personal = () => {
                     'Content-Type': 'application/json'
                 }
             });
-            // dispatch(actions.isLoggedIn({ status: false, username: '', avatar: '' }));
-            // dispatch(actions.clearCurrPark());
-            // navigate('/');
         } catch (e) {
-            // dispatch(actions.clearCurrPark());
-            // navigate('/');
             console.log(e);
         }
         dispatch(actions.isLoggedIn({ status: false, username: '', avatar: '' }));
         dispatch(actions.clearCurrPark());
-        navigate('/');
+        navigate('/map');
     }
     const deleteAcc = async () => {
         try {
@@ -42,15 +37,17 @@ const Personal = () => {
                 withCredentials: true,
                 headers: {
                     'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
             });
-            dispatch(actions.clearCurrPark());
-            navigate('/');
         } catch (e) {
-            dispatch(actions.clearCurrPark());
-            navigate('/');
+            console.log(e);
         }
+        localStorage.removeItem('accessToken');
+        dispatch(actions.isLoggedIn({ status: false, username: '', avatar: '' }));
+        dispatch(actions.clearCurrPark());
+        navigate('/map');
     }
     const alert = () => {
         toast(

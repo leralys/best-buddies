@@ -40,7 +40,8 @@ const AvatarsModal = (props) => {
                 withCredentials: true,
                 headers: {
                     'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
             });
             dispatch(actions.isLoggedIn({ status: isLoggedIn, username: username, avatar: id }));
