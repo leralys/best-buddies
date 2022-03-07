@@ -1,9 +1,9 @@
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import actions from '../../redux/actions/index';
 import Nav from '../../components/nav/Nav';
 import Personal from '../../components/user/Personal';
 import Favorites from '../../components/user/Favorites';
-import { useEffect } from 'react';
 
 const UserPage = () => {
     const dispatch = useDispatch();

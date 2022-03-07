@@ -15,6 +15,7 @@ const Personal = () => {
     const isLoggedIn = useSelector(state => state.loggedIn.loggedIn);
     const avatar = useSelector(state => state.loggedIn.avatar);
     const logout = async () => {
+        localStorage.removeItem('accessToken');
         try {
             await axios.delete(`${url}/users/logout`, {
                 withCredentials: true,
@@ -23,13 +24,17 @@ const Personal = () => {
                     'Content-Type': 'application/json'
                 }
             });
-            dispatch(actions.isLoggedIn({ status: false, username: '', avatar: '' }));
-            dispatch(actions.clearCurrPark());
-            navigate('/');
+            // dispatch(actions.isLoggedIn({ status: false, username: '', avatar: '' }));
+            // dispatch(actions.clearCurrPark());
+            // navigate('/');
         } catch (e) {
-            dispatch(actions.clearCurrPark());
-            navigate('/');
+            // dispatch(actions.clearCurrPark());
+            // navigate('/');
+            console.log(e);
         }
+        dispatch(actions.isLoggedIn({ status: false, username: '', avatar: '' }));
+        dispatch(actions.clearCurrPark());
+        navigate('/');
     }
     const deleteAcc = async () => {
         try {

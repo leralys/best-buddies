@@ -9,11 +9,13 @@ import MapPage from './pages/map/mapPage';
 import NotFound from './pages/notFound/NotFound';
 import UserPage from './pages/userPage/UserPage';
 import { Auth } from './auth/Auth';
+import { CircularProgress } from '@mui/material';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Home = lazy(() => import('./pages/home/Home'));
 const ParkPage = lazy(() => import('./pages/parkPage/ParkPage'));
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,7 +35,10 @@ const App = () => {
         draggable
         pauseOnHover
       />
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={
+        <div style={{ height: '100vh', width: '100vw', padding: '30px 0 0 30px' }}>
+          <CircularProgress color="success" />
+        </div>}>
         <Routes>
           <Route path='/' element={<Home title={'Home'} />} />
           <Route path='/map' element={<MapPage />} />

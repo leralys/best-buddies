@@ -18,6 +18,10 @@
       align-items: center;
       justify-content: center;
 
+      @include tablet {
+        margin-left: 3px;
+      }
+
       .form {
         display: flex;
         flex-direction: column;
