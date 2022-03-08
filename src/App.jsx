@@ -12,6 +12,7 @@ import { Auth } from './auth/Auth';
 import { CircularProgress } from '@mui/material';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'react-toastify/dist/ReactToastify.css';
+import './styles.scss';
 
 const Home = lazy(() => import('./pages/home/Home'));
 const ParkPage = lazy(() => import('./pages/parkPage/ParkPage'));

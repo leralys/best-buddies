@@ -42,17 +42,18 @@ const ParkInfo = () => {
     }
     return (
         <div className='park-info'>
-            <div className='info-container'>
-                <div className='map-container'>
+            <h2 className='header'>{park.address}, {park.city}</h2>
+            <div>
+                <div className='left-page-container'>
                     <MapMini />
                     {isLoggedIn && favorites &&
                         <AddToFavorites />
                     }
                 </div>
                 <div className='additional-container'>
-                    <div className='col'>
+                    <div>
                         Rating:
-                        <div className='row'>
+                        <div className='rating'>
                             {rate}
                         </div>
                         Open hours:
@@ -62,7 +63,7 @@ const ParkInfo = () => {
                     </div>
                     {isLoggedIn &&
                         <Button variant='contained'
-                            id='checkin-button'
+                            className='red-button'
                             onClick={checkin}
                             sx={{ mb: 2 }}>
                             Check In
@@ -70,6 +71,7 @@ const ParkInfo = () => {
                     }
                 </div>
             </div>
+
         </div>
     );
 }

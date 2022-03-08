@@ -114,7 +114,7 @@ const Form = ({ title }) => {
         }
     }
     return (
-        <div className='login-register'>
+        <>
             <Nav />
             <main className='page'>
                 <div className='container'>
@@ -187,7 +187,7 @@ const Form = ({ title }) => {
                     </Box>
                 </div>
             </main>
-        </div>
+        </>
     );
 }
 

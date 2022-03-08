@@ -4,11 +4,11 @@ import Hero from '../../components/hero/Hero';
 
 const Home = () => {
     return (
-        <div className='home'>
+        <>
             <Nav />
             <Hero />
             <MapMain />
-        </div>
+        </>
     )
 }
 

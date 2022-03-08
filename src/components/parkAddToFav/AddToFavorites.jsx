@@ -43,7 +43,7 @@ const AddToFavorites = () => {
     }
     return (
         <>
-            <Box sx={{ display: 'inline-flex', mt: 2 }} className='addtofav-container'>
+            <Box sx={{ display: 'inline-flex', mt: 1 }} className='addtofav-container'>
                 {findId(park.location_id, favorites)
                     ? <Button id='addtofav-button'
                         onClick={deleteFav}>

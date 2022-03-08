@@ -5,8 +5,8 @@ import './invitation.scss';
 
 const Invitation = () => {
     return (
-        <div className='container'>
-            <Typography variant='h5' className='h5'>Want to see who is here right now?</Typography>
+        <div className='invitation'>
+            <Typography variant='h5'>Want to see who is here right now?</Typography>
             <Typography variant='h5'>And to meet new friends for your buddy?</Typography>
             <Button variant='contained' size='large'
                 className='button'

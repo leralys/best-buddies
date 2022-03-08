@@ -7,12 +7,14 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { IconButton, Box, Button } from '@mui/material';
 import { toast } from 'react-toastify';
 import { url } from '../../utilities/url';
-import AvatarsModal from './AvatarsModal.js';
+import AvatarsModal from '../userAvatarsModal/AvatarsModal';
+import './personal.scss';
 
 const Personal = () => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const isLoggedIn = useSelector(state => state.loggedIn.loggedIn);
+    const username = useSelector(state => state.loggedIn.username);
     const avatar = useSelector(state => state.loggedIn.avatar);
     const logout = async () => {
         localStorage.removeItem('accessToken');
@@ -29,7 +31,7 @@ const Personal = () => {
         }
         dispatch(actions.isLoggedIn({ status: false, username: '', avatar: '' }));
         dispatch(actions.clearCurrPark());
-        navigate('/map');
+        navigate('/');
     }
     const deleteAcc = async () => {
         try {
@@ -47,20 +49,18 @@ const Personal = () => {
         localStorage.removeItem('accessToken');
         dispatch(actions.isLoggedIn({ status: false, username: '', avatar: '' }));
         dispatch(actions.clearCurrPark());
-        navigate('/map');
+        navigate('/');
     }
     const alert = () => {
         toast(
-            (<div className='col'
-                style={{ alignItems: 'center' }}>
+            (<div className='col'>
                 Are you sure? 😥
                 <Button
                     variant='outlined'
                     color='error'
                     size='small'
                     onMouseDown={deleteAcc}
-                    sx={{ mt: 2 }}
-                >
+                    sx={{ mt: 2 }}>
                     Delete
                 </Button>
             </div>),
@@ -70,41 +70,45 @@ const Personal = () => {
             });
     }
     return (
-        <section className='col User-personal' style={{ maxWidth: '300px' }}>
+        <div className='user-personal'>
             {isLoggedIn &&
-                <img style={{ border: '1px solid var(--color-light-grey', marginLeft: '0.5rem' }}
-                    src={`${url}/static/avatars/${avatar}.jpeg`}
-                    alt='Cute dog avatar'
-                />
+                <h2 className='header'>Hi, {username}</h2>
             }
-            <AvatarsModal />
-            <Box sx={{ display: 'inline-flex' }} >
-                <Button
-                    onClick={logout}
-                    variant='text'
-                    style={{ color: 'var(--color-dark-grey)' }}
-                    sx={{ display: 'inline-flex', mt: 2 }}
-                >
-                    <IconButton aria-label='log out' component='span'>
-                        <LogoutIcon />
-                    </IconButton>
-                    Log out
-                </Button>
-            </Box>
-            <Box sx={{ display: 'inline-flex' }}>
-                <Button
-                    onClick={alert}
-                    variant='text'
-                    style={{ color: 'var(--color-map-red)' }}
-                    sx={{ display: 'inline-flex', mt: 2 }}
-                >
-                    <IconButton aria-label='delete account' component='span'>
-                        <HighlightOffIcon style={{ color: 'var(--color-map-red)' }} />
-                    </IconButton>
-                    Delete account
-                </Button>
-            </Box>
-        </section>
+            <div className='left-page-container'>
+                {isLoggedIn &&
+                    < img src={`${url}/static/avatars/${avatar}.jpeg`}
+                        alt='Cute dog avatar' />
+                }
+            </div>
+            <div className='controls'>
+                <AvatarsModal />
+                <Box sx={{ display: 'inline-flex' }} >
+                    <Button
+                        onClick={logout}
+                        variant='text'
+                        style={{ color: '#252525' }}
+                        sx={{ display: 'inline-flex', mt: 1 }}>
+                        <IconButton aria-label='log out' component='span'>
+                            <LogoutIcon />
+                        </IconButton>
+                        Log out
+                    </Button>
+                </Box>
+                <Box sx={{ display: 'inline-flex' }}>
+                    <Button
+                        onClick={alert}
+                        variant='text'
+                        className='grey'
+                        sx={{ display: 'inline-flex', mt: 1 }}
+                        style={{ color: '#252525' }}>
+                        <IconButton aria-label='delete account' component='span'>
+                            <HighlightOffIcon className='red' />
+                        </IconButton>
+                        Delete account
+                    </Button>
+                </Box>
+            </div>
+        </div >
     );
 }
 
